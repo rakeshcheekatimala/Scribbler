@@ -58,7 +58,6 @@ function loadPost() {
 
 function appendComment(comment) {
 	var newcomment = '<div class="card"><div class="card-body">' + comment + '</div></div>';
-	console.log(newcomment, comment)
 	$('#allcomments').append(newcomment);
 }
 function addComment() {
