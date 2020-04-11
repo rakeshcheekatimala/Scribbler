@@ -34,7 +34,7 @@ var posts = [
 	{
 		author: 'Srishti Gupta',
 		post: {
-			question: "Everything you should know about ‘module’ & ‘require’ in Node.js",
+			question: "Everything you should know about 'module' & 'require' in Node.js",
 			answer: "Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you’ve created a module named xyz.",
 			comments: []
 		}
