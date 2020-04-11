@@ -3,7 +3,7 @@ Upgrad Frontend Assignment
 
 Skills:
 
-* BootStrap
+* Bootstrap
 * Jquery
 * Javascript
 * HTML
