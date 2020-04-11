@@ -39,8 +39,13 @@ var posts = [
 			comments: []
 		}
 	}
-]
-
+];
+if (sessionStorage.getItem('storedPosts')) {
+	posts = JSON.parse(sessionStorage.getItem('storedPosts'));
+}
+else {
+	sessionStorage.setItem('storedPosts', JSON.stringify(posts)); // on initial load set this 
+}
 var selectedPost = posts[5]; // default 
 var postId = sessionStorage.getItem('postId');
 if (postId) {
@@ -88,11 +93,14 @@ function editPost() {
 		$('#postdescription').find('textarea').removeClass('d-none').val(selectedPost.post.answer);
 	}
 	else {
+		selectedPost.post.question = $('#posttitle').find('input').val(); //saving the content  of title
+		selectedPost.post.answer = $('#postdescription').find('textarea').val(); // saving the content of description
 		$('.editpost--btn').find('span').text('Edit');
 		$('.editpost--btn').find('i').removeClass('fa-floppy-o').addClass('fa-pencil');
-		$('#posttitle').find('p').removeClass('d-none');
+		$('#posttitle').find('p').removeClass('d-none').text(selectedPost.post.question);
 		$('#posttitle').find('input').addClass('d-none');
 		$('#postdescription').find('textarea').addClass('d-none');
 		$('#postdescription').find('p').removeClass('d-none').text(selectedPost.post.answer);
 	}
+	sessionStorage.setItem('storedPosts', JSON.stringify(posts));
 }
