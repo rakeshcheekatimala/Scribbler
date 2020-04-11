@@ -11,7 +11,7 @@ var posts = [
 		author: 'Colby Fayock',
 		post: {
 			question: "What is linting and how can it save you time?",
-			answer: "One of the biggest challenges in software development is time. It’ssomething we can’t easily get moreof,but linting can help us make the most out of the time we have.",
+			answer: "One of the biggest challenges in software development is time. It's something we can't easily get moreof,but linting can help us make the most out of the time we have.",
 			comments: []
 		}
 	},
@@ -35,7 +35,7 @@ var posts = [
 		author: 'Srishti Gupta',
 		post: {
 			question: "Everything you should know about 'module' & 'require' in Node.js",
-			answer: "Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you’ve created a module named xyz.",
+			answer: "Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you've created a module named xyz.",
 			comments: []
 		}
 	}
@@ -58,6 +58,11 @@ function loadPost() {
 		$('#posttitle p').text(selectedPost.post.question); // update the question
 		$('#postauthor span').first().text(selectedPost.author);
 		$('#postdescription').find('p').text(selectedPost.post.answer);
+		selectedPost.post.comments.forEach(function (value) {
+			var newcomment = '<div class="card"><div class="card-body">' + value + '</div></div>';
+			$('#allcomments').append(newcomment);
+		});
+		// the above code is used to load all comments
 	}
 }
 
@@ -71,6 +76,7 @@ function addComment() {
 	if (comment && comment.trim() !== '') {
 		selectedPost && selectedPost.post.comments.push(comment);
 		appendComment(comment);
+		sessionStorage.setItem('storedPosts', JSON.stringify(posts));
 	}
 	$('#postcontents').val(''); // make the comment text field empty
 
