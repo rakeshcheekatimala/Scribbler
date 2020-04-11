@@ -1,0 +1,39 @@
+body {
+	background-color: #fff;
+}
+
+.post--btn {
+	background-color: #e91e63;
+	color:#fff;
+}
+.post--btn:hover{
+	background-color: #e91e63;
+	color:#fff;
+}
+
+.post__container {
+	margin-top: 3rem;
+}
+
+#postdescription{
+	margin:1rem 0px;
+}
+
+.post--btn i {
+	color:#fff;
+}
+.like__this {
+	margin-top: 0.75rem;
+}
+
+#allcomments .card{
+	margin-top:1rem;
+}
+
+.mb-top-15 {
+	margin-top: 1rem;
+}
+
+.mb-bt-15 {
+	margin-bottom: 1rem;
+}

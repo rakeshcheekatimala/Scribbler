@@ -4,7 +4,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href='../css/postlist.css' rel='stylesheet' type='text/css'>
+	<link href='../css/post.css' rel='stylesheet' type='text/css'>
 	<link href='../css/header.css' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="../css/button.css" />
@@ -20,141 +20,51 @@
 		<a class='header__title' href='../index.html'>ScriBBler</a>
 		<span class='header__subheading'>Explore, Imagine, Create"</span>
 	</header>
-	<!-- ATTENTION: The HTML code for the list of posts has been given to you. You can feel free to add/delete/modify this code. You need to write the proper CSS and JavaScript code corresponding to this page so that the result looks like the screenshots given to you in the Project Statement. -->
 
-	<!-- list of all posts starts here -->
-	<!-- post 1 starts here -->
-	<div class='container posts__listcontainer'>
-		<div class='row justify-content-md-between'>
-			<div class="card col-md-12 col-lg-5" id='post--0'>
-				<div class='card__titlecontainer'>
-					<p>Srishti Gupta</p>
-				</div>
+	<div class='container post__container'>
+		<div class='row justify-content-md-center' id='posttitle'>
+			<p>Everything you should know about 'module' & 'require' in Node.js</p>
+			<input val="Everything you should know about 'module' & 'require' in Node.js"
+				class='d-none col-lg-12 form-control mb-bt-15' />
+		</div>
+		<div class='d-flex justify-content-md-between' id='postauthor'>
+			<span>Srishti Gupta</span>
+			<button class='btn post--btn editpost--btn' onclick='editPost()'><span>Edit</span> &nbsp<i class="fa fa-pencil"
+					aria-hidden="true"></i></button>
+		</div>
+		<div class='text-justify' id='postdescription'>
+			<p>Module in Node.js is a simple or complex functionality organized in single or multiple JavaScript files which
+				can be reused throughout the Node.js application.
 
-				<div class='card__content'>
-					<div class='d-flex justify-content-md-between'>
-						<p>‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</p>
-						<span data-toggle="modal" data-target="#deleteModal">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					<p class='card__contentdescription'>Since JavaScript does not have any type-checking, either of these
-						keywords can be used to
-						declare a
-						variable
-						of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they
-						are
-						different.</p>
-					<span class="float-right">
-						<a href="post.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-					</span>
-				</div>
-			</div>
-			<!-- post 1 ends here -->
+				Each module in Node.js has its own context, so it cannot interfere with other modules or pollute global scope.
+				Also, each module can be placed in a separate .js file under a separate folder.
 
-			<!-- post 2 starts here -->
-			<div class="card col-md-12 col-lg-5" id='post--1'>
-				<div class='card__titlecontainer'>
-					<p>Colby Fayock</p>
-				</div>
-
-				<div class='card__content'>
-					<div class='d-flex justify-content-md-between'>
-						<p>What is linting and how can it save you time?</p>
-						<span data-toggle="modal" data-target="#deleteModal">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					<p class='card__contentdescription'>One of the biggest challenges in software development is time. It’s
-						something we can’t easily get more
-						of,
-						but linting can help us make the most out of the time we have.</p>
-					<span class="float-right">
-						<a href="post.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-					</span>
+				Node.js implements CommonJS modules standard. CommonJS is a group of volunteers who define JavaScript standards
+				for web server, desktop, and console application.
+			</p>
+			<textarea class="form-control d-none"></textarea>
+		</div>
+		<button class='btn post--btn like--btn' onclick='updateLike()'><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+			&nbsp<span>Like</span></button>
+		<p class='like__this'>Be the first one to like this!</p>
+		<textarea class="form-control" id="postcontents" rows="3" required></textarea>
+		<button class='btn post--btn mb-top-15' onclick="addComment()">Comment</button>
+		<br />
+		<br />
+		<p>All Comments</p>
+		<div id='allcomments'>
+			<div class="card">
+				<div class="card-body">
+					This is some text first comment
 				</div>
 			</div>
-			<!-- post 2 ends here -->
-
-			<!-- post 3 starts here -->
-			<div class="card col-md-12 col-lg-5" id='post--2'>
-				<div class='card__titlecontainer'>
-					<p>Yazeed Bzadough</p>
-				</div>
-
-				<div class='card__content'>
-					<div class='d-flex justify-content-md-between'>
-						<p>How to Get More Views on Your Tech Blog</p>
-						<span data-toggle="modal" data-target="#deleteModal">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					<p class='card__contentdescription'>If you're a developer with a Twitter account, you've already seen
-						everyone and their cat start a blog,
-						YouTube channel, or Patreon. We all want to become stars, or at the very least, a recognizable name in the
-						industry.</p>
-					<span class="float-right">
-						<a href="post.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-					</span>
-				</div>
-			</div>
-			<!-- post 3 ends here -->
-
-			<!-- post 4 starts here -->
-			<div class="card col-md-12 col-lg-5" id='post--3'>
-				<div class='card__titlecontainer'>
-					<p class='author'>Cedd Burge</p>
-				</div>
-
-				<div class='card__content'>
-					<div class='d-flex justify-content-md-between'>
-						<p>How to write easily describable code</p>
-						<span data-toggle="modal" data-target="#deleteModal">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					<p class='card__contentdescription'>When code is not describable using words, most people have to do some
-						mental mapping to turn it in to
-						words.
-						This wastes mental energy, and you run the risk of getting the mapping wrong. Different people will map to
-						different words, which
-						leads to confusion when discussing the code.</p>
-					<span class="float-right">
-						<a href="post.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-					</span>
-				</div>
-			</div>
-			<!-- post 4 ends here -->
-
-			<!-- post 5 starts here -->
-			<div class="card col-md-12 col-lg-5" id='post--4'>
-				<div class='card__titlecontainer'>
-					<p>Srishti Gupta</p>
-				</div>
-
-				<div class='card__content'>
-					<div class='d-flex justify-content-md-between'>
-						<p>Everything you should know about ‘module’ & ‘require’ in Node.js</p>
-						<span data-toggle="modal" data-target="#deleteModal">
-							<i class="fa fa-trash-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					<p class='card__contentdescription'>Node.js treats each JavaScript file as a separate module. For instance,
-						if you have a file containing
-						some
-						code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that
-						you’ve
-						created a module
-						named xyz.</p>
-					<span class="float-right">
-						<a href="post.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-					</span>
+			<div class="card">
+				<div class="card-body">
+					This is some text second comment
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- post 5 ends here -->
-
 	<!-- TODO: Write code for delete post modal here -->
 	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -254,6 +164,7 @@
 		crossorigin="anonymous"></script>
 	<script src="../js/postlist.js"></script>
 	<script src='../js/index.js'></script>
+	<script src="../js/post.js"></script>
 </body>
 
 </html>
