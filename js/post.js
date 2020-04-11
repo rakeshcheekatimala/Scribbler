@@ -4,7 +4,8 @@ var posts = [
 		post: {
 			question: "'let' me be a 'const'(ant), not a 'var'(iable)!",
 			answer: 'keywords can be used to declare a variable of any type(datatype) in JavaScript.Though all the three keywords are used for the same purpose, they are different.',
-			comments: []
+			comments: [],
+			likeCount: 0
 		}
 	},
 	{
@@ -12,7 +13,8 @@ var posts = [
 		post: {
 			question: "What is linting and how can it save you time?",
 			answer: "One of the biggest challenges in software development is time. It's something we can't easily get moreof,but linting can help us make the most out of the time we have.",
-			comments: []
+			comments: [],
+			likeCount: 0
 		}
 	},
 	{
@@ -20,7 +22,8 @@ var posts = [
 		post: {
 			question: "How to Get More Views on Your Tech Blog",
 			answer: "If you're a developer with a Twitter account, you've already seen everyone and their cat start a blog,YouTube channel, or Patreon.We all want to become stars, or at the very least, a recognizable name in the industry.",
-			comments: []
+			comments: [],
+			likeCount: 0
 		}
 	},
 	{
@@ -28,7 +31,8 @@ var posts = [
 		post: {
 			question: "How to write easily describable code",
 			answer: 'When code is not describable using words, most people have to do some mental mapping to turn it in to words.This wastes mental energy, and you run the risk of getting the mapping wrong.Different people will map to different words, which leads to confusion when discussing the code',
-			comments: []
+			comments: [],
+			likeCount: 0
 		}
 	},
 	{
@@ -36,7 +40,8 @@ var posts = [
 		post: {
 			question: "Everything you should know about 'module' & 'require' in Node.js",
 			answer: "Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you've created a module named xyz.",
-			comments: []
+			comments: [],
+			likeCount: 0
 		}
 	}
 ];
@@ -63,6 +68,9 @@ function loadPost() {
 			$('#allcomments').append(newcomment);
 		});
 		// the above code is used to load all comments
+		if (selectedPost.post.likeCount) {
+			$('.like__this').text(selectedPost.post.likeCount + ' person likes this!');
+		}
 	}
 }
 
@@ -83,8 +91,10 @@ function addComment() {
 }
 
 function updateLike() {
+	selectedPost.post.likeCount += 1;
 	$('.like--btn').find('span').text('Liked');
-	$('.like__this').text('1 person likes this!');
+	$('.like__this').text(selectedPost.post.likeCount + ' person likes this!');
+	sessionStorage.setItem('storedPosts', JSON.stringify(posts));
 }
 
 var isEdit = false;
