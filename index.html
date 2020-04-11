@@ -5,6 +5,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/button.css" />
 	<link rel="stylesheet" href="css/header.css" />
 	<link rel="stylesheet" href="css/index.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
@@ -14,12 +15,12 @@
 	<header class='header'>
 		<button id='signin' class='primary__btn' data-target='#signInModal' data-toggle="modal">Sign In</button>
 		<button id='signup' class='primary__btn' data-target="#signUpModal" data-toggle="modal">Sign Up</button>
-		<a class='header__title'>ScriBBler</a>
+		<a class='header__title' href="index.html">ScriBBler</a>
 		<span class='header__subheading'>Explore, Imagine, Create"</span>
 	</header>
 	<div class='post__actioncontrols'>
-		<button class='post__btn'>All Post</button>
-		<button class='post__btn' data-target="#createPostModal" data-toggle="modal">Create Post</button>
+		<a class='post__btn' href='html/postslist.html'>All Posts</a>
+		<span class='post__btn' data-target="#createPostModal" data-toggle="modal">Create Post</span>
 	</div>
 	<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -44,7 +45,7 @@
 							<button type="submit" class="btn btn-lg btn-block btn--primary">Sign In</button>
 							<div class='signup justify-content-center'>
 								<span>Not a memeber ? </span>
-								<a href=''> &nbspSign Up</a>
+								<span onclick="openSignUpModal()" class='signup--link'> &nbspSign Up</a>
 							</div>
 						</div>
 					</form>
@@ -129,6 +130,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
+	<script src='js/index.js'></script>
 </body>
 
 </html>

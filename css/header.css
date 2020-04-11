@@ -2,12 +2,15 @@
 .header__logo {
 	margin:10px;
 }
-.header__title{
+a.header__title{
 	font-family: 'Montez' , cursive;
 	font-size: 50px;
 	color: #112fb4;
 	margin: auto;
 	text-decoration: none;
+}
+a.header__title:hover{
+	color: #112fb4;
 }
 .header__subheading {
 	font-family: Ubuntu Mono, cursive;
@@ -39,11 +42,11 @@
 	color:#000;
 	padding: 10px;
 	min-width: 90px;
+	text-decoration: none;
+	cursor: pointer;
 }
-
-.btn.btn--primary{
-	background-color: rgb(96, 221, 96);
-	margin-bottom: 10px;
+.post__btn:hover{
+	color:#000;
 }
 
 #signInModal .signup {
@@ -56,4 +59,9 @@
 
 input.form-control,textarea{
 	background-color: #d3d3d347;
+}
+
+.signup--link {
+	color: #0000ff;
+	cursor: pointer;
 }

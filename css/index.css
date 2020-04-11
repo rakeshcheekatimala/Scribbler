@@ -7,3 +7,7 @@ body{
 	overflow:hidden;
 	display: block;
 } 
+
+.post__actioncontrols a {
+	text-decoration: none;
+}

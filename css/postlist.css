@@ -1,0 +1,40 @@
+body{
+	background: #ffeedd;
+}
+.posts__listcontainer .card{
+	flex-direction: row;
+	font-size: 15px;
+	margin-bottom: 1rem;
+	border-radius: 15px;
+	margin-top: 1.5rem;
+}
+.posts__listcontainer .card:hover{
+	box-shadow: 5px 5px 5px 5px #727ced;
+}
+.card__titlecontainer {
+	border-right: 1px solid #fff;
+  padding-right: 15px;
+	display: flex;
+	align-items: center
+}
+.card__content {
+	padding: 1rem;
+	background-color: #d3d3d347;
+	margin-right: -15px;
+}
+
+.card__contentdescription {
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	overflow: hidden;
+	max-height: 4.5em;
+	line-height: 1.5em;
+}
+
+.mb__15 {
+	margin: 10px;
+}
+
+.card span:first-of-type {
+	margin-left: 5px;
+}
